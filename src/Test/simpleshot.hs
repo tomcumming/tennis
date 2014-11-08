@@ -35,7 +35,10 @@ draw w@((startx, starty), (targetx, targety), g, v) =
       ++ zipWith Color [green, blue] (map Line (makePaths w))
     )
 
-main = display 
-  (InWindow "test" (floor width, floor height) (50, 50)) 
-  black
-  (draw testWorld)
+main = do
+  putStrLn "Testing shot trajectory solving:"
+  putStrLn "Should show one or more curves between the circled points"
+  display 
+    (InWindow "test" (floor width, floor height) (50, 50)) 
+    black
+    (draw testWorld)
